@@ -1,0 +1,72 @@
+# Sistema de Gerenciamento de Eventos
+
+## Descrição
+
+Este projeto é um sistema de banco de dados para gerenciar eventos, participantes e suas inscrições. O sistema permite o armazenamento e a administração eficiente das informações relacionadas a eventos e inscrições.
+
+## Estrutura do Banco de Dados
+
+O banco de dados `sistema_eventos` inclui as seguintes tabelas:
+
+1. **Eventos**: Armazena informações sobre os eventos organizados.
+   - `id_evento` (INT, Auto Incremento, Primary Key)
+   - `nome_evento` (VARCHAR(100))
+   - `data_evento` (DATE)
+   - `local_evento` (VARCHAR(100))
+   - `descricao` (TEXT)
+
+2. **Participantes**: Armazena informações sobre os participantes.
+   - `id_participante` (INT, Auto Incremento, Primary Key)
+   - `nome` (VARCHAR(100))
+   - `email` (VARCHAR(100), Unique)
+   - `telefone` (VARCHAR(15))
+
+3. **Inscricoes**: Registra as inscrições dos participantes em eventos.
+   - `id_inscricao` (INT, Auto Incremento, Primary Key)
+   - `id_evento` (INT, Foreign Key)
+   - `id_participante` (INT, Foreign Key)
+   - `data_inscricao` (DATE)
+
+## Comandos Utilizados
+
+- `CREATE DATABASE`: Cria o banco de dados.
+- `CREATE TABLE`: Cria tabelas no banco de dados.
+- `INSERT INTO ... VALUES ...`: Insere dados nas tabelas.
+- `SELECT ... JOIN ...`: Consulta dados e combina informações de tabelas.
+- `UPDATE ... SET ... WHERE ...`: Atualiza dados em uma tabela.
+- `DELETE FROM ... WHERE ...`: Remove dados de uma tabela.
+
+## Operações
+
+### Inserção de Dados
+
+- Adiciona eventos, participantes e inscrições às tabelas.
+
+### Consultas
+
+- Exibe todos os eventos disponíveis.
+- Mostra a lista de participantes inscritos em um evento específico.
+- Verifica todos os eventos nos quais um determinado participante está inscrito.
+
+### Atualização e Deleção de Dados
+
+- Atualiza informações de eventos e participantes.
+- Remove eventos passados e cancela inscrições.
+
+### Tarefas Adicionais
+
+- Lista todos os participantes que se inscreveram em mais de um evento.
+- Cria uma interface simples para consultas básicas.
+
+## Entrega
+
+- Um arquivo SQL contendo os comandos necessários para criar o banco de dados, tabelas e inserir os dados.
+- Um relatório com screenshots das consultas realizadas e uma breve explicação de como as operações foram implementadas.
+
+## Contribuições
+
+Para contribuir, faça um fork do repositório e envie suas alterações por meio de um pull request. Para sugestões ou relatórios de problemas, abra uma issue.
+
+## Licença
+
+Este projeto é licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
